@@ -168,10 +168,40 @@ function initScrollAnimations() {
     });
 }
 
+// Mobile Navigation Toggle
+function initMobileNavigation() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-content a');
+    
+    if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener('click', () => {
+            mobileOverlay.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileOverlay.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking overlay
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Start typewriter and animations after page loads
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize loading sequence
     initLoadingSequence();
+    
+    // Initialize mobile navigation
+    initMobileNavigation();
     
     // Set initial state
     rotatingElement.style.opacity = '1';

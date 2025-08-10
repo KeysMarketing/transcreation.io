@@ -572,6 +572,69 @@ p {
     color: #ffffff;
 }
 
+/* Mobile Navigation */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 1px;
+    transition: all 300ms ease;
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 32px;
+    padding: 80px 32px;
+}
+
+.mobile-nav-content a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 16px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease;
+    min-width: 200px;
+    text-align: center;
+}
+
+.mobile-nav-content a:hover {
+    color: #3b82f6;
+    border-bottom-color: rgba(59, 130, 246, 0.3);
+}
+
 
 /* Hero Section */
 .hero {
@@ -583,6 +646,10 @@ p {
     position: relative;
     text-align: center;
     overflow: hidden;
+}
+
+.mobile-break {
+    display: none;
 }
 
 .hero::before {
@@ -1046,8 +1113,11 @@ p {
     }
 
     .hero {
-        min-height: auto;
-        padding: 120px 0;
+        min-height: 100vh;
+        padding: 140px 0 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-headline {
@@ -1055,16 +1125,26 @@ p {
         letter-spacing: -0.01em;
         margin-bottom: 32px;
     }
+    
+    .hero-headline br.mobile-break {
+        display: block;
+    }
 
     .rotating-language {
         min-width: 0;
         height: 1.1em;
+        display: block;
+        margin: 16px auto 48px;
+        text-align: center;
     }
 
     .hero-subheadline {
-        font-size: 18px;
+        font-size: 19px;
         margin-bottom: 48px;
-        line-height: 1.6;
+        line-height: 1.7;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h2 {
@@ -1077,11 +1157,12 @@ p {
     }
 
     p {
-        font-size: 16px;
+        font-size: 17px;
+        line-height: 1.7;
     }
 
     .section {
-        padding: 100px 0;
+        padding: 80px 0;
     }
     
     /* Mobile-optimized definition quote */
@@ -1115,9 +1196,9 @@ p {
     }
     
     .box-text {
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 0 -4px;
+        font-size: 18px;
+        line-height: 1.7;
+        margin: 0;
     }
     
     /* Reduce floating shapes opacity on mobile */
@@ -1218,19 +1299,15 @@ p {
     }
     
     .nav-container {
-        padding: 16px 20px;
+        padding: 16px 24px;
     }
     
     .nav-links {
-        gap: 24px;
+        display: none;
     }
     
-    .nav-links a {
-        font-size: 14px;
-        padding: 8px 4px;
-        min-height: 44px;
+    .mobile-menu-toggle {
         display: flex;
-        align-items: center;
     }
     
     /* Better touch targets for mobile */
@@ -1279,8 +1356,36 @@ p {
 
 /* Small phones */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        padding: 120px 0 60px;
+    }
+    
     .hero-headline {
-        font-size: 36px;
+        font-size: 34px;
+        line-height: 1.1;
+        margin-bottom: 24px;
+    }
+    
+    .hero-headline br.mobile-break {
+        display: block;
+    }
+
+    .rotating-language {
+        display: block;
+        margin: 16px auto 48px;
+        text-align: center;
+    }
+    
+    .hero-subheadline {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 95%;
     }
     
     .transcreation-layout {
@@ -1293,15 +1398,31 @@ p {
     }
     
     .definition-box {
-        padding: 32px 24px;
+        padding: 36px 28px;
+        min-height: auto;
     }
     
     .box-title {
-        font-size: 24px;
-        margin-bottom: 16px;
+        font-size: 26px;
+        margin-bottom: 20px;
+        line-height: 1.2;
     }
     
     .box-text {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    h2 {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+    
+    p {
         font-size: 16px;
         line-height: 1.6;
     }

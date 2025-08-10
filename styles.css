@@ -1286,7 +1286,15 @@ p {
     }
     
     .requirement-item {
-        padding: 20px 0;
+        padding: 24px 20px;
+        margin-bottom: 20px;
+        gap: 16px;
+    }
+    
+    .bullet {
+        margin-top: 6px;
+        width: 6px;
+        height: 6px;
     }
 
     .btn:not(.btn-sm):not(.btn-ghost):not(.btn-link) {
@@ -1328,7 +1336,7 @@ p {
     }
     
     .footer-container {
-        padding: 0 20px;
+        padding: 0 32px;
     }
     
     .footer-content {
@@ -1425,6 +1433,22 @@ p {
     p {
         font-size: 16px;
         line-height: 1.6;
+    }
+    
+    .requirement-item {
+        padding: 20px 16px;
+        margin-bottom: 16px;
+        gap: 14px;
+    }
+    
+    .bullet {
+        margin-top: 4px;
+        width: 5px;
+        height: 5px;
+    }
+    
+    .footer-container {
+        padding: 0 24px;
     }
     
     .quote-mark {

@@ -1,15 +1,15 @@
-// Typewriter effect for languages
+// Typewriter effect for languages with native phrases
 const languages = [
-    "English",
-    "Español", 
-    "Français",
-    "Deutsch",
-    "Português",
-    "Italiano",
-    "Svenska",
-    "Polska", 
-    "Norsk",
-    "Nederlands"
+    "in English",
+    "auf Deutsch", 
+    "en Français",
+    "en Español",
+    "em Português",
+    "in Italiano",
+    "på Svenska",
+    "po Polsku",
+    "på Norsk", 
+    "in het Nederlands"
 ];
 
 // Shuffle array to get random order
